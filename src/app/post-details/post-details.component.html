@@ -1,0 +1,27 @@
+<div class="flex justify-center w-screen bg-cyan-600">
+  <div class="flex flex-col items-center">
+    <section>
+      <app-post-item *ngIf="post" [post]="post"></app-post-item>
+      <app-post-reactions  *ngIf="post" [post]="post"></app-post-reactions>
+  <!-- <button (click)="addLike()">Add like</button> -->
+
+    </section>
+
+    <section>
+      <h2>Write comment</h2>
+      <input #newComment placeholder="What do you want to comment?" />
+      <button (click)="sendComment(newComment.value); newComment.value = ''">
+        Send
+      </button>
+    </section>
+
+    <section>
+      <h2>Comments</h2>
+      <ul *ngIf="comments">
+        <li *ngFor="let comment of comments">
+          <app-comment-item [comment]="comment" ></app-comment-item>
+        </li>
+      </ul>
+    </section>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<main class="flex justify-center p-5 md:p-12">
+  <div class="container m-auto">
+    <ul class=" grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <li *ngFor="let post of posts">
+        <app-post-item [post]="post"></app-post-item>
+      </li>
+    </ul>
+  </div>
+</main>
+
+

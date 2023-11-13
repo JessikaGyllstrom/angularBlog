@@ -1,0 +1,17 @@
+<section >
+  <div>
+    <p>{{id}}</p>
+
+    <ul>
+      <li *ngFor="let item of items">
+        <article>
+          <span>Id: {{ item.id }}</span>
+          <br />
+          <span>Amount: {{ item.likes }}</span>
+          <button (click)="addAmount(item)">+</button>
+          <!-- <button (click)="reduceAmount(item)">-</button> -->
+        </article>
+      </li>
+    </ul>
+  </div>
+</section>

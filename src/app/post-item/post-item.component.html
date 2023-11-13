@@ -1,0 +1,18 @@
+<div class="container">
+  <img class="object-cover" src="{{ imageUrl(post.thumbnailUrl).url() }} ">
+    <div class="card-body">
+        <div routerLink="/details/{{ post.id }}">
+
+      <h5 class="card-title">
+        {{ post.title }}
+      </h5>
+      <p>{{post.body}}</p>
+            <p>ID: {{post.id}}</p>
+
+
+<!-- <p>{{post.thumbnailUrl}}</p>
+      <p class="card-text" *ngFor="let view of movie.overview">
+        {{ view["children"][0]["text"] }}
+      </p>  -->
+      <div>Date:{{ post.creationDate | date }}</div>
+</div>
