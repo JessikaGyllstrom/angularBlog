@@ -1,27 +1,23 @@
-<div class="flex justify-center w-screen bg-cyan-600">
+<div class="flex justify-center w-screen bg-slate-900 text-gray-50 pb-12">
   <div class="flex flex-col items-center">
     <section>
       <app-post-item *ngIf="post" [post]="post"></app-post-item>
       <app-post-reactions  *ngIf="post" [post]="post"></app-post-reactions>
-  <!-- <button (click)="addLike()">Add like</button> -->
 
-    </section>
 
-    <section>
-      <h2>Write comment</h2>
-      <input #newComment placeholder="What do you want to comment?" />
-      <button (click)="sendComment(newComment.value); newComment.value = ''">
-        Send
-      </button>
-    </section>
-
-    <section>
-      <h2>Comments</h2>
+      <h2 class="text-lg font-semibold">Comments: </h2>
       <ul *ngIf="comments">
         <li *ngFor="let comment of comments">
           <app-comment-item [comment]="comment" ></app-comment-item>
         </li>
       </ul>
+      <div class="p-5 mt-3 bg-gray-800 flex flex-col  border border-teal-400 rounded-md">
+        <h2 class="font-semibold text-lg text-center mb-2">Add comment</h2>
+        <input class="p-1 text-sm bg-gray-700 border border-teal-400 rounded-sm" #newComment placeholder="Enter comment... " />
+        <button class="py-1 mt-2 bg-teal-400" (click)="sendComment(newComment.value); newComment.value = ''">
+          Send
+        </button>
+      </div>
     </section>
     </div>
 </div>

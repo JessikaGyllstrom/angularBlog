@@ -1,22 +1,11 @@
-<h2>Create post</h2>
-<label>Title</label>
-<input #title />
-
-<br />
-<label>Content</label>
-<input #content />
-
-<br />
-
-<label>Tags</label>
-<input #tag placeholder="Add a tag" />
-<button (click)="addTag(tag.value); tag.value = ''">Add tag</button>
-<ul>
-  <li *ngFor="let tag of tags">
-    <span>{{ tag }}</span>
-    <button (click)="removeTag(tag)">-</button>
-  </li>
-</ul>
-
-<br />
-<button (click)="uploadPost(title.value, content.value)">Post</button>
+<section class="flex justify-center items-center bg-gray-800">
+  <div class="flex justify-center md:min-h-[50%] md:min-w-[30%] flex-col p-2 md:px-8 bg-neutral-900 rounded-md">
+    <h2 class="mt-5 text-xl text-center text-gray-50">CREATE POST</h2>
+    <input class="my-2 p-1 text-sm bg-slate-800 rounded-sm border border-teal-400 text-slate-300" #title placeholder="Title: " />
+    <textarea class="my-2 p-1 text-sm bg-slate-800 rounded-sm border border-teal-400  text-slate-300" #content placeholder="Content"></textarea>
+    <button class="bg-teal-500 my-2 py-1 border border-teal-400 hover:bg-gray-700 hover:text-gray-50"
+      (click)="addPost(title.value, content.value)">
+      Add Post
+    </button>
+  </div>
+</section>

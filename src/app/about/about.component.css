@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+section {
+  min-height: 100vh;
+  font-family: "Press Start", sans-serif;
+}

@@ -1,7 +1,0 @@
-<div style="text-align:center">
-<div>
-  <input *ngIf="editing == 1" type="text" [(ngModel)]="name">
-  <span *ngIf="editing !==1 ">{{name}}</span>
-  <button (click)="editing === 1 ? save(1) : editing=1">{{editing===1 ?"Save" : "Edit"}}</button>
-</div>
-</div>

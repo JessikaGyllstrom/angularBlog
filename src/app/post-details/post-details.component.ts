@@ -11,8 +11,7 @@ import { Comment } from '@angular/compiler';
   styleUrls: ['./post-details.component.css']
 })
 export class PostDetailsComponent  {
-  // id: number = -1;
-  // post: Post | undefined;
+
   id: number = -1;
   num: number = 1;
 
@@ -46,14 +45,14 @@ export class PostDetailsComponent  {
 
   sendComment(body: string): void {
     let post = this.post;
-    // let user = this.authService.loginUser;
-    // if (!post || !user) return;
+
     if (!post) return;
     console.log("adding comment")
 
 
     this.commentService.addComment(body, post);
-  }
+  }  
+  
   
 
 }
