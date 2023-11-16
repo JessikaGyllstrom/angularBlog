@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Post } from '../post';
-import { PostService } from '../post.service';
-import { SanityService } from '../sanity.service';
+import { Post } from '../../post';
+import { PostService } from '../../services/post.service';
+import { SanityService } from '../../services/sanity.service';
 
 @Component({
   selector: 'app-post-item',

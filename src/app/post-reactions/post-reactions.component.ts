@@ -1,9 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from '../post';
-import { PostService } from '../post.service';
-import { ReactionsItem } from '../reactions-item';
-import { ReactionsService } from '../reactions.service';
+import { PostService } from '../services/post.service';
+import { ReactionsService } from '../services/reactions.service';
+import { Reactions } from '../reactions';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-post-reactions',
@@ -14,7 +16,15 @@ export class PostReactionsComponent  {
   @Input() post: Post = {} as Post;
 
   id: number = -1;
-  
+  likes: number = 0;
+  dislikes: number = 0;
+
+  showValues = false;
+
+  faThumbsUp = faThumbsUp;
+
+  faThumbsDown = faThumbsDown;
+
 
   constructor(
     private reactionsService: ReactionsService,
@@ -27,24 +37,33 @@ export class PostReactionsComponent  {
       (params) => (this.id = parseInt(params['id'])),
     );
   }
-  // get post(): Post | undefined {
-  //   return this.postService.posts.find((all) => all.id === this.id);
-  // }
+  
+  get reactions(): Reactions[] | undefined {
 
-  get items() {
-    let post = this.post;
-    if (!post) return undefined;
-
-    let items = this.reactionsService.items.filter(
-      (all) => all.id === post?.id,
+    let reactions = this.reactionsService.reactions.filter(
+      (all) => all.id === this.id,
     );
+    // array empty or does not exist
+    if (reactions === undefined || reactions.length == 0) {
+      console.log("undefined")
+      this.showValues = true;
 
-    return items;
+      return undefined;
+    } else {
+      return reactions;
+    }
   }
-  addAmount(item: ReactionsItem): void {
-    console.log("adding amount" + item.id)
-    this.reactionsService.addAmount(this.id);
-  }
 
+  
 
+  addLike(id: number, likes: number, dislikes: number): void {
+    console.log("adding like")
+    this.showValues = false;
+    this.reactionsService.addLike(id, likes, dislikes);
+  } 
+  addDislike(id: number, likes: number, dislikes: number): void {
+    console.log("adding dislike")
+    this.showValues = false;
+    this.reactionsService.addDislike(id, likes, dislikes);
+  }  
 }

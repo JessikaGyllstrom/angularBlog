@@ -6,9 +6,9 @@
 // Ett blogginlägg på denna ska visa en titel och en bild (thumbnailUrl) men inget innehåll (body)
 
 import { Component, OnInit } from '@angular/core';
-import { Post } from '../post';
-import { PostService } from '../post.service';
-import { SanityService } from '../sanity.service';
+import { Post } from '../../post';
+import { PostService } from '../../services/post.service';
+import { SanityService } from '../../services/sanity.service';
 
 @Component({
   selector: 'app-home',

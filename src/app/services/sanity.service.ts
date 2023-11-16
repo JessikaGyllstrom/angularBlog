@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { createClient } from '@sanity/client';
 import imageUrlBuilder from "@sanity/image-url";
-import { Profile } from './profile';
+import { Profile } from '../profile';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +30,7 @@ export class SanityService {
         name,
         bio,
         avatarUrl,
+        intro
       }`
     )
     return result;

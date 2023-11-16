@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Profile } from '../profile';
-import { SanityService } from '../sanity.service';
+import { SanityService } from '../services/sanity.service';
 
 @Component({
   selector: 'app-about',

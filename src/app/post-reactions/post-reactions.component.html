@@ -1,17 +1,28 @@
-<section >
-  <div>
-    <p>{{id}}</p>
+<section class="p-3">
 
-    <ul>
-      <li *ngFor="let item of items">
-        <article>
-          <span>Id: {{ item.id }}</span>
-          <br />
-          <span>Amount: {{ item.likes }}</span>
-          <button (click)="addAmount(item)">+</button>
-          <!-- <button (click)="reduceAmount(item)">-</button> -->
-        </article>
-      </li>
-    </ul>
+  <div *ngIf="showValues">
+    <p>Number of likes: {{likes}}</p>
+    <p>Number of dislikes: {{dislikes}}</p>
   </div>
+  <div *ngIf="!showValues">
+    <div *ngFor="let item of reactions">
+      <p>Number of LIKES: {{item.likes}}</p>
+      <p>Number of DISLIKES: {{item.dislikes}}</p>
+    </div>
+  </div>
+
+
+
+  <div class="flex">
+    <button (click)="addLike(this.id, this.likes, this.dislikes)">Like
+      <fa-icon [icon]="faThumbsUp" [class]="['text-purple-600']"
+        class="text-xl ml-2 cursor-pointer easehover text-center hover:text-teal-400"></fa-icon>
+    </button>
+    <button class="ml-2" (click)="addDislike(this.id, this.likes, this.dislikes)">Dislike
+      <fa-icon [icon]="faThumbsDown" [class]="['text-teal-400']"
+        class="text-xl ml-2 cursor-pointer easehover text-center hover:text-purple-600"></fa-icon>
+    </button>
+  </div>
+
+
 </section>

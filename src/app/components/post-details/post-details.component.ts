@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CommentService } from '../comment.service';
-import { Post } from '../post';
-import { PostService } from '../post.service';
+import { CommentService } from '../../services/comment.service';
+import { Post } from '../../post';
+import { PostService } from '../../services/post.service';
 import { Comment } from '@angular/compiler';
 
 @Component({

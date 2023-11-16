@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import  { createClient } from '@sanity/client';
-import { Post } from './post';
-import { ReactionsItem } from './reactions-item';
+import { Post } from '../post';
+import { ReactionsItem } from '../reactions-item';
 
 @Injectable({
   providedIn: 'root',

@@ -1,6 +1,6 @@
 <section>
-  <div class="bg-gray-900 rounded-md">
-    <img class="object-cover mb-3" src="{{ imageUrl(post.thumbnailUrl).height(370).width(370).url() }} ">
+  <div class="bg-gray-800 rounded-md">
+    <img class="object-cover mb-3 rounded-lg" src="{{ imageUrl(post.thumbnailUrl).height(370).width(400).url() }} ">
     <div class="px-3" routerLink="/details/{{ post.id }}">
       <h5 class="text-xl font-semibold">{{ post.title }}</h5>
       <p>{{post.body}}</p>

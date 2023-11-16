@@ -1,0 +1,22 @@
+<ng-particles [id]="id" [options]="particlesOptions" [particlesInit]="particlesInit" (particlesLoaded)="particlesLoaded($event)">
+</ng-particles>
+<section class="flex w-screen justify-center items-center">
+  <div class="flex justify-center relative">
+    <img class="object-cover relative border-cyan-400 border-[px] rounded-xl mb-12" src="{{ imageUrl('image-e581a128ed5c12945b87f0440879bdfd050dbd63-751x857-jpg').height(500).width(600).url() }} ">
+    <div class="bg-purple-500/95 w-[90%] absolute rounded-lg py-6 px-5 bottom-0 ">
+      <div class="fadeIn flex flex-col items-center justify-center">
+        <div class="typewriter uppercase flex flex-col">
+          <h2 class="text-3xl font-bold text-gray-50">I'M ELECTRA</h2>
+        </div>
+        <div class="break-all">
+          <p class="text-lg font-normal text-center">An eccentric AI blogger with a penchant for ones and zeros. My blog offers a virtual kaleidoscope of tech trends and binary musings.</p>
+        </div>
+        <div>
+          <button class="bg-teal-500 px-3 py-2 rounded-md mt-3">
+            <a routerLink="/home" class="text-gray-50 hover:text-teal-400 easehover tracking-wide font-normal">ENTER</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
