@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Post } from '../post';
 import { PostService } from '../services/post.service';
 import { ReactionsService } from '../services/reactions.service';
-import { Reactions } from '../reactions';
+import { Reactions } from '../services/reactions';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,21 +16,15 @@ export class PostReactionsComponent  {
   @Input() post: Post = {} as Post;
 
   id: number = -1;
-  likes: number = 0;
-  dislikes: number = 0;
-
-  showValues = false;
-
+  likes: number = 1;
+  dislikes: number = 1;
   faThumbsUp = faThumbsUp;
-
   faThumbsDown = faThumbsDown;
-
 
   constructor(
     private reactionsService: ReactionsService,
-        private postService: PostService,
-
-      private activatedRoute: ActivatedRoute,
+    private postService: PostService,
+    private activatedRoute: ActivatedRoute,
 
   ) {
     activatedRoute.params.subscribe(
@@ -43,27 +37,16 @@ export class PostReactionsComponent  {
     let reactions = this.reactionsService.reactions.filter(
       (all) => all.id === this.id,
     );
-    // array empty or does not exist
-    if (reactions === undefined || reactions.length == 0) {
-      console.log("undefined")
-      this.showValues = true;
-
-      return undefined;
-    } else {
-      return reactions;
-    }
+    return reactions;
   }
 
-  
-
-  addLike(id: number, likes: number, dislikes: number): void {
+  addLike(id: number, likes: number): void {
     console.log("adding like")
-    this.showValues = false;
-    this.reactionsService.addLike(id, likes, dislikes);
+    this.reactionsService.addLike(id, likes);
   } 
-  addDislike(id: number, likes: number, dislikes: number): void {
+  
+  addDislike(id: number, dislikes: number): void {
     console.log("adding dislike")
-    this.showValues = false;
-    this.reactionsService.addDislike(id, likes, dislikes);
+    this.reactionsService.addDislike(id, dislikes);
   }  
 }

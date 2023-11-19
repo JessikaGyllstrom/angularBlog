@@ -18,14 +18,11 @@ export class PostDetailsComponent  {
   constructor(
     private activatedRoute: ActivatedRoute,
     private postService: PostService,
-    // private userService: UserService,
     private commentService: CommentService,
-    // private authService: AuthService,
   ) {
     activatedRoute.params.subscribe(
       (params) => (this.id = parseInt(params['id'])),
     );
-    
   }
   get post(): Post | undefined {
     return this.postService.posts.find((all) => all.id === this.id);
@@ -48,7 +45,6 @@ export class PostDetailsComponent  {
 
     if (!post) return;
     console.log("adding comment")
-
 
     this.commentService.addComment(body, post);
   }  

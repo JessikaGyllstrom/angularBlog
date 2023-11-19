@@ -19,8 +19,7 @@ export class SanityService {
     })
   }
   constructor() { 
-        this.loadApiData().then((profile) => (this.apiProfile = profile));
-
+    this.loadApiData().then((profile) => (this.apiProfile = profile));
   }
   private async loadApiData() {
     let result = await this.sanityClientCredentials.option.fetch(
@@ -30,7 +29,6 @@ export class SanityService {
         name,
         bio,
         avatarUrl,
-        intro
       }`
     )
     return result;
@@ -38,8 +36,6 @@ export class SanityService {
   public get profile(): Profile[] {
     return this.apiProfile;
   }
-
-
   urlFor = (source: any) =>
     imageUrlBuilder(this.sanityClientCredentials.option).image(source);
 }

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ReactionsService } from './services/reactions.service';
+import { ReactionsService } from './reactions.service';
 
 describe('ReactionsService', () => {
   let service: ReactionsService;

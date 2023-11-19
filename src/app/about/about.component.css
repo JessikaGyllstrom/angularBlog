@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 section {
+  min-height: 100vh;
+}
+.about {
   min-height: 100vh;
 }
 .binary {
   font-family: 'Press Start 2P', monospace;
+}
+img {
+  min-height: 550px;
 }

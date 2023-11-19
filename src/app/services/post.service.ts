@@ -41,7 +41,7 @@ export class PostService {
   }
 
   public loadLocalData(): Post[] {
-    //localStorage.clear();
+    localStorage.clear();
 
     let posts = localStorage.getItem('posts');
     return !posts ? [] : JSON.parse(posts);
@@ -57,9 +57,8 @@ export class PostService {
       title,
       body,
       creationDate: new Date(),
-      thumbnailUrl: 'image-b1e87101fb8847bc92dd11b7b4d42f844a300107-849x741-jpg'
+      thumbnailUrl: 'image-ad893ab459612fce5cfa59c6a8a509896f70d21b-3556x2000-jpg'
     });
-
     localStorage.setItem('posts', JSON.stringify(this.localPosts));
   }
   public getAllposts(): Post[] {

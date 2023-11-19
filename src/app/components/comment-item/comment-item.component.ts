@@ -8,5 +8,4 @@ import { Comment } from '../../comment';
 })
 export class CommentItemComponent {
   @Input() comment: Comment = {} as Comment;
-
 }

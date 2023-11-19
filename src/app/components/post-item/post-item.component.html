@@ -1,11 +1,9 @@
 <section>
-  <div class="bg-gray-800 rounded-md">
-    <img class="object-cover mb-3 rounded-lg" src="{{ imageUrl(post.thumbnailUrl).height(370).width(400).url() }} ">
-    <div class="px-3" routerLink="/details/{{ post.id }}">
-      <h5 class="text-xl font-semibold">{{ post.title }}</h5>
-      <p>{{post.body}}</p>
-      <p>ID: {{post.id}}</p>
-      <p class="mb-3">Date: {{ post.creationDate | date }}</p>
+  <div class="bg-gray-800 rounded-md break-words hover:scale-[1.02]">
+    <img class="mb-3 rounded-lg" src="{{ imageUrl(post.thumbnailUrl).url() }} ">
+    <div class="flex flex-col px-3 mx-2 cursor-pointer" routerLink="/details/{{ post.id }}">
+      <h5 class="mt-2 leading-8 text-xl font-semibold uppercase underline underline-offset-4 decoration-slate-500 text-teal-400 tracking-wide">{{ post.title }}</h5>
+      <p class="mb-2 mt-3 text-gray-400">Published: {{ post.creationDate | date }}</p>
     </div>
   </div>
 </section>

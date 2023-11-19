@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PostService } from '../../services/post.service';
+import { faSpaceAwesome } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-new-post',
@@ -8,6 +9,8 @@ import { PostService } from '../../services/post.service';
   styleUrls: ['./new-post.component.css']
 })
 export class NewPostComponent {
+
+  faSpace = faSpaceAwesome;
 
   constructor(
     private postService: PostService,
@@ -23,7 +26,7 @@ export class NewPostComponent {
     else {
       alert("Post Added!")
       this.postService.addPost(title, content);
-      this.router.navigate(['/']);
+      this.router.navigate(['/home']);
     }
   }
 }

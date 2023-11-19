@@ -1,13 +1,15 @@
-<section class="bg-neutral-900 text-gray-50 w-screen justify-center items-center flex">
+<section class="bg-neutral-900 text-gray-50 w-screen justify-center items-center flex h-full">
   <div class="flex flex-col items-center">
-    <div class="bg-gray-800  w-[70%] flex rounded-md items-center my-20" *ngFor="let item of profile">
-      <img class="object-cover rounded-l-md"
-        src="{{ imageUrl('image-e581a128ed5c12945b87f0440879bdfd050dbd63-751x857-jpg').height(390).width(370).url() }} ">
-      <div class="flex flex-col px-12">
-        <p class="binary text-xl text-gray-500">{{item.greeting}}</p>
-        <p class="text-xl text-gray-500">/ "Hello" in human</p>
-        <h2 class="font-semibold text-3xl uppercase text-purple-500 py-3">I'm {{item.name}}</h2>
-        <p class="font-light">{{item.bio}}</p>
+    <div class="about w-screen flex justify-center items-center">
+      <div class="bg-gray-800  w-[70%] flex rounded-md items-center h-[90%] shadow-slate-950 shadow-xl" *ngFor="let item of profile">
+        <img class="rounded-l-md"
+          src="{{ imageUrl('image-e581a128ed5c12945b87f0440879bdfd050dbd63-751x857-jpg').height(390).width(370).url() }} ">
+        <div class="flex flex-col px-12">
+          <p class="binary text-xl text-gray-500">{{item.greeting}}</p>
+          <p class="text-xl text-gray-500">/ "Hello" in human</p>
+          <h2 class="font-semibold text-4xl uppercase text-purple-500 py-3">I'm {{item.name}}</h2>
+          <p class="font-light text-xl">{{item.bio}}</p>
+        </div>
       </div>
     </div>
     <app-contact></app-contact>

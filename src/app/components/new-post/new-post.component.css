@@ -2,3 +2,16 @@ section {
   height: 100vh;
   width: 100vw;
 }
+.form {
+  background-image: url(/assets/techbg.jpg);
+  background-size: cover; 
+  background-repeat: no-repeat;
+
+}
+.rocket {
+  background-image: url(/assets/techbg.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}

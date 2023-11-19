@@ -1,23 +1,20 @@
-<section class="flex justify-center items-center w-screen">
-  <div class="contact flex justify-center md:min-h-[50%]  py-8 md:px-8 rounded-md w-[70%]">
-    <div class="flex flex-col w-[55%]">
-      <h2 class="mt-5 text-xl text-center text-purple-500 font-semibold">CONTACT</h2>
-      <input class="my-2 p-1 text-sm bg-slate-800/60 rounded-sm border border-teal-400" #firstName placeholder="Name: "
+<section class="flex justify-center items-center w-screen h-full mb-20">
+  <div class="contact flex justify-center md:min-h-[50%] rounded-md w-[70%]">
+    <div class="flex flex-col w-[60%] px-5 justify-center">
+      <h2 class="text-3xl text-center text-purple-500 font-semibold mb-4">CONTACT</h2>
+      <input class="my-2 p-2 text-sm bg-slate-800/60 rounded-sm border border-teal-400 drop-shadow-md" #firstName placeholder="Name: "
         required />
-      <input class="my-2 p-1 text-sm bg-slate-800/60 rounded-sm border border-teal-400" #email placeholder="Email: " />
-      <input class="my-2 p-1 text-sm bg-slate-800/60 border border-teal-400" #phone placeholder="Phone: " />
-      <textarea class="my-2 p-1 text-sm bg-slate-800/60 rounded-sm border border-teal-400" #message
-        placeholder="Message" required></textarea>
-      <button class="bg-teal-500/60 my-2 py-1 border border-teal-400 hover:bg-purple-600/50 hover:text-gray-50"
+      <input class="my-2 p-2 text-sm bg-slate-800/60 rounded-sm border border-teal-400 drop-shadow-md" #email placeholder="Email: " />
+      <input class="my-2 p-2 text-sm bg-slate-800/60 border border-teal-400 drop-shadow-md" #phone placeholder="Phone: " />
+      <textarea class="my-2 p-2 text-sm bg-slate-800/60 rounded-sm border border-teal-400 drop-shadow-md" #message
+        placeholder="Message:" required></textarea>
+      <button class="bg-teal-500/60 my-2 py-2 border rounded-sm border-teal-400 hover:bg-purple-600/50 hover:text-gray-50 shadow-teal-400 shadow-[0_5px_30px_-3px_rgba(0,0,0,0.3)]"
         (click)="sendMessage(firstName.value, message.value, email.value, phone.value ); firstName.value = ''; message.value=''; email.value=''; phone.value='' ">
         Send
       </button>
     </div>
     <div>
-
+      <img class="mb-3" src="/assets/contact.jpg">
     </div>
-    <!-- <div>
-      <img class="mb-3" src="{{ imageUrl('image-ed8d12ea143fdb9c9a125b96bf86990a1295d499-1621x1844-jpg').height(370).width(370).url() }} ">
-    </div> -->
   </div>
 </section>
