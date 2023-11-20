@@ -41,7 +41,7 @@ export class PostService {
   }
 
   public loadLocalData(): Post[] {
-    localStorage.clear();
+    // localStorage.clear();
 
     let posts = localStorage.getItem('posts');
     return !posts ? [] : JSON.parse(posts);

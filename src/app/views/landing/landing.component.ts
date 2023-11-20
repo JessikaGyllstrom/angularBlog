@@ -25,7 +25,7 @@ export class LandingComponent {
   ) { }
 
 particlesOptions = {
-  duration: 40,
+  duration: 400,
   fullScreen: {
   enable: true,
   zIndex: 0 // or any value is good for you, if you use -1 set `interactivity.detectsOn` to `"window"` if you need mouse interactions
