@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Post } from '../../post';
+import { Post } from '../../utils/post';
 import { PostService } from '../../services/post.service';
 import { SanityService } from '../../services/sanity.service';
 
@@ -19,6 +19,4 @@ export class PostItemComponent {
   imageUrl(source: any) {
     return this.sanityService.urlFor(source);
   }
-
-
 }

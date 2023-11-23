@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import  { createClient } from '@sanity/client';
-import { Post } from '../post';
-import { ReactionsItem } from '../reactions-item';
+import { Post } from '../utils/post';
+import { ReactionsItem } from '../utils/reactions-item';
 
 @Injectable({
   providedIn: 'root',
@@ -10,9 +10,7 @@ export class PostService {
 
   private apiPosts: Post[] = [];
   private localPosts: Post[] = [];
-  // private reactionService: Post[] = [];
-
-   private reactionService: string[] = [];
+  private reactionService: string[] = [];
 
   sanityClientCredentials = {
     option: createClient({
@@ -42,7 +40,6 @@ export class PostService {
 
   public loadLocalData(): Post[] {
     // localStorage.clear();
-
     let posts = localStorage.getItem('posts');
     return !posts ? [] : JSON.parse(posts);
   }
@@ -61,6 +58,7 @@ export class PostService {
     });
     localStorage.setItem('posts', JSON.stringify(this.localPosts));
   }
+
   public getAllposts(): Post[] {
     console.log("all posts" + this.apiPosts.concat(this.localPosts) )
     return this.apiPosts.concat(this.localPosts);
@@ -74,5 +72,4 @@ export class PostService {
     let reactionsJson = localStorage.getItem('posts');
     return !reactionsJson ? [] : JSON.parse(reactionsJson);
   }
-
 }

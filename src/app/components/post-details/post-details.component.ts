@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommentService } from '../../services/comment.service';
-import { Post } from '../../post';
+import { Post } from '../../utils/post';
 import { PostService } from '../../services/post.service';
 import { Comment } from '@angular/compiler';
 
@@ -31,24 +31,17 @@ export class PostDetailsComponent  {
   get comments() {
     let post = this.post;
     if (!post) return undefined;
-
     let comments = this.commentService.comments.filter(
       (all) => all.postId === post?.id,
     );
-
     return comments;
   }
 
 
   sendComment(body: string): void {
     let post = this.post;
-
     if (!post) return;
     console.log("adding comment")
-
     this.commentService.addComment(body, post);
   }  
-  
-  
-
 }

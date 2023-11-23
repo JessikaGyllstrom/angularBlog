@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Post } from '../post';
+import { Post } from '../utils/post';
 import { PostService } from '../services/post.service';
 import { ReactionsService } from '../services/reactions.service';
 import { Reactions } from '../services/reactions';
@@ -33,7 +33,6 @@ export class PostReactionsComponent  {
   }
   
   get reactions(): Reactions[] | undefined {
-
     let reactions = this.reactionsService.reactions.filter(
       (all) => all.id === this.id,
     );

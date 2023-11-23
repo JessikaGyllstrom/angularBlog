@@ -1,7 +1,4 @@
 import { Injectable } from '@angular/core';
-import { ReactionsItem } from '../reactions-item';
-import { Post } from '../post';
-import { PostService } from './post.service';
 import { Reactions } from './reactions';
 
 @Injectable({
@@ -23,7 +20,6 @@ export class ReactionsService {
   }
 
   public get reactions(): Reactions[] {
-    // localStorage.clear();
     return this.localReactions;
   }
 
@@ -38,7 +34,6 @@ export class ReactionsService {
   } 
 
   public addLike(id: number, likes: number) {
-    // localStorage.clear();
 
     let itemExist = this.reactions.some(e => e.id === id);
 
@@ -57,6 +52,7 @@ export class ReactionsService {
       });
     }
   }
+
   public addDislike(id: number, dislikes: number) {
     // localStorage.clear();
     let itemExist = this.reactions.some(e => e.id === id);

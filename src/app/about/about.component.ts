@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Profile } from '../profile';
+import { Profile } from '../utils/profile';
 import { SanityService } from '../services/sanity.service';
 
 @Component({

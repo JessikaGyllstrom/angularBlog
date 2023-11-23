@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { createClient } from '@sanity/client';
 import imageUrlBuilder from "@sanity/image-url";
-import { Profile } from '../profile';
+import { Profile } from '../utils/profile';
 
 @Injectable({
   providedIn: 'root'
